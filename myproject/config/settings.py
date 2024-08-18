@@ -17,7 +17,7 @@ DEBUG = True
 # ALLOWED_HOSTSにlocalhostを設定
 ALLOWED_HOSTS = [
     'localhost',
-    '18.183.156.104', # パブリック IPv4 アドレスを追加
+    'satoh2.training-lab-2024.com',
 ]
 
 
