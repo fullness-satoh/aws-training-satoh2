@@ -17,7 +17,7 @@ DEBUG = True
 # ALLOWED_HOSTSにlocalhostを設定
 ALLOWED_HOSTS = [
     'localhost',
-    'satoh2.training-lab-2024.com',
+    'satoh2-train.training-lab-2024.com',
 ]
 
 
