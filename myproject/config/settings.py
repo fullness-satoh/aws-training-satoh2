@@ -1,5 +1,10 @@
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
+
+# 環境変数を読み込み
+ENV_NAME = os.getenv('ENV_NAME')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,7 +17,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-b4zm@1l2ad5p$#-%1*w52ujham#l$s&m(v@e&k@4urp&hb$4p2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# ローカル環境の場合のみ、デバッグモードオン
+if ENV_NAME == 'local':
+    DEBUG = True
+else:
+    DEBUG = False
 
 # ALLOWED_HOSTSにlocalhostを設定
 ALLOWED_HOSTS = [
