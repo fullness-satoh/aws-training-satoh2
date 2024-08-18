@@ -1,0 +1,38 @@
+{% extends "layout/base.html" %}
+
+{% load static %} 
+
+{% block title_block %}
+アカウント 詳細
+{% endblock %}
+
+{% block main_block %}
+  <h1>アカウント 詳細</h1>
+  <div>
+    <ul>
+        <li>名前 : {{ object.username}}</li>
+        <li>Email : {{ object.email}}</li>
+    </ul>
+  </div>
+  <a href="{% url 'account:account-list' %}">アカウント 一覧画面</a>
+{% endblock %}
+
+{% block extracss %}
+  main {
+    text-align: center;
+  }
+  h1 {
+    padding-top: 30px;
+  }
+  div {
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+  }
+  img {
+    padding: 20px;
+    height: 150px;
+  }
+{% endblock %}

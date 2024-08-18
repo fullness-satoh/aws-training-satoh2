@@ -1,0 +1,39 @@
+{% extends "layout/base.html" %}
+
+{% load static %} 
+
+{% block title_block %}
+商品 詳細
+{% endblock %}
+
+{% block main_block %}
+  <h1>商品 詳細</h1>
+  <div>
+    <ul>
+        <li>商品名 : {{ object.name}}</li>
+        <li>価格 : {{ object.price}}</li>
+        <li>詳細 : {{ object.description}}</li>
+    </ul>
+  </div>
+  <a href="{% url 'review:product-list' %}">商品 一覧画面</a>
+{% endblock %}
+
+{% block extracss %}
+  main {
+    text-align: center;
+  }
+  h1 {
+    padding-top: 30px;
+  }
+  div {
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+  }
+  img {
+    padding: 20px;
+    height: 150px;
+  }
+{% endblock %}

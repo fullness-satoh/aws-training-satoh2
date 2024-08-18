@@ -1,0 +1,45 @@
+{% extends "layout/base.html" %}
+
+{% load static %} 
+
+{% block title_block %}
+レビュー 詳細
+{% endblock %}
+
+{% block main_block %}
+  <h1>レビュー 詳細</h1>
+  <div>
+    <ul>
+        <li>{{ object.title}}</li>
+        <li>{{ object.product}}</li>
+        <li>{{ object.rating}}</li>
+        <li>{{ object.user}}</li>
+        <li>{{ object.comment}}</li>
+    </ul>
+  </div>
+  {% if user.is_authenticated %}
+  <p><a href="{% url 'review:update-review' pk=object.id %}">レビューを編集する</a></p>
+  <p><a href="{% url 'review:delete-review' pk=object.id %}">レビューを削除する</a></p>
+  {% endif %}
+  <a href="{% url 'review:review-list' %}">レビュー 一覧画面</a>
+{% endblock %}
+
+{% block extracss %}
+  main {
+    text-align: center;
+  }
+  h1 {
+    padding-top: 30px;
+  }
+  div {
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+  }
+  img {
+    padding: 20px;
+    height: 150px;
+  }
+{% endblock %}

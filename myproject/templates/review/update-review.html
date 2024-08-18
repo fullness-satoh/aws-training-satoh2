@@ -1,0 +1,39 @@
+{% extends "layout/base.html" %}
+
+{% load static %}
+
+{% block title_block %}
+レビュー 更新
+{% endblock %}
+
+{% block main_block %}
+  <h1>レビュー 更新</h1>
+  <div>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">更新</button>
+    </form>
+  </div>
+  <a href="{% url 'review:review-top' %}">レビュー トップに戻る</a>
+{% endblock %}
+
+{% block extracss %}
+  main {
+    text-align: center;
+  }
+  h1 {
+    padding-top: 30px;
+  }
+  div {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+  }
+  img {
+    padding: 20px;
+    height: 150px;
+  }
+{% endblock %}

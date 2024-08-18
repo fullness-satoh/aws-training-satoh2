@@ -1,0 +1,39 @@
+{% extends "layout/base.html" %}
+
+{% load static %} 
+
+{% block title_block %}
+アカウント 一覧
+{% endblock %}
+
+{% block main_block %}
+  <h1>アカウント 一覧</h1>
+  <div>
+    <ul>
+    {% for object in object_list %}
+      <li><a href="{% url 'account:account-detail' pk=object.id %}">{{object}}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+  <a href="{% url 'account:account-top' %}">アカウント トップ画面</a>
+{% endblock %}
+
+{% block extracss %}
+  main {
+    text-align: center;
+  }
+  h1 {
+    padding-top: 30px;
+  }
+  div {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+  }
+  img {
+    padding: 20px;
+    height: 150px;
+  }
+{% endblock %}

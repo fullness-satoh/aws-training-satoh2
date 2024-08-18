@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>レビュー トップ画面</title>
+</head>
+<body>
+{% extends "layout/base.html" %}
+
+{% load static %}
+
+{% block title_block %}
+レビュー トップ画面
+{% endblock %}
+
+{% block main_block %}
+  <h1>AWS研修 レビュー トップ画面</h1>
+  <img src="{% static 'img/juice.png' %}">
+  <div>
+    <a href="{% url 'account:account-top' %}">アカウント画面へ</a>
+    <a href="{% url 'review:product-list' %}">商品一覧</a>
+    <a href="{% url 'review:review-list' %}">レビュー 一覧</a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'review:create-review' %}">レビュー 作成</a>
+    {% endif %}
+  </div>
+</body>
+</html>
+{% endblock %}
+
+{% block extracss %}
+  main {
+    text-align:center;
+  }
+  h1 {
+    padding-top: 30px;
+  }
+  a {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  img {
+    padding: 20px;
+    height: 150px;
+  }
+{% endblock %}

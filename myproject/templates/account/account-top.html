@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>アカウント トップ画面</title>
+</head>
+<body>
+{% extends "layout/base.html" %}
+
+{% load static %}
+
+{% block title_block %}
+アカウント トップ画面
+{% endblock %}
+
+{% block main_block %}
+  <h1>アカウント トップ画面</h1>
+  <img src="{% static 'img/people.png' %}">
+  <div>
+    <a href="{% url 'review:review-top' %}">レビュー画面へ</a>
+    <a href="{% url 'account:account-list' %}">アカウント一覧</a>
+  </div>
+</body>
+</html>
+{% endblock %}
+
+{% block extracss %}
+  main {
+    text-align:center;
+  }
+  h1 {
+    padding-top: 30px;
+  }
+  a {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  img {
+    padding: 20px;
+    height: 150px;
+  }
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "layout/base.html" %}
+
+{% load static %} 
+
+{% block title_block %}
+商品レビューアプリ トップ画面
+{% endblock %}
+
+{% block main_block %}
+  <h1>商品レビューアプリ トップ画面</h1>
+  <img src="{% static 'img/kame.jpg' %}">
+  <div>
+    <a href="{% url 'review:review-top' %}">レビューページ</a>
+    <a href="{% url 'account:account-top' %}">アカウントページ</a>
+  </div>
+  {% if user.is_authenticated %}
+  <p><a href="{% url 'logout' %}">ログアウト</a></p>
+  {% else %}
+  <p><a href="{% url 'login' %}">ログイン</a></p>
+  {% endif %}
+{% endblock %}
+
+{% block extracss %}
+  main {
+    text-align:center;
+  }
+  h1 {
+    padding-top: 30px;
+  }
+  a {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  img {
+    padding: 20px;
+    height: 200px;
+  }
+{% endblock %}

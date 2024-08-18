@@ -1,0 +1,42 @@
+{% extends "layout/base.html" %}
+
+{% load static %}
+
+{% block title_block %}
+レビュー 削除
+{% endblock %}
+
+{% block main_block %}
+  <h1>レビュー 削除</h1>
+  <div>
+    <p>本当にこのレビューを削除しますか？</p>
+    <div>
+      <p>{{ object}}</p>
+    </div>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">削除</button>
+    </form>
+    <a href="{% url 'review:review-list' %}">キャンセル</a>
+  </div>
+{% endblock %}
+
+{% block extracss %}
+  main {
+    text-align: center;
+  }
+  h1 {
+    padding-top: 30px;
+  }
+  div {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+  }
+  img {
+    padding: 20px;
+    height: 150px;
+  }
+{% endblock %}
