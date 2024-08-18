@@ -7,6 +7,7 @@ from .views import hello_japan
 from .views import FirstClassBaseView
 from .views import CompanyDetailView
 from .views import IndexView
+from .views import FileUploadView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -19,4 +20,5 @@ urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-]
+    path('upload/', FileUploadView.as_view(), name='file_upload'),
+
