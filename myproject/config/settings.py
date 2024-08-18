@@ -17,6 +17,7 @@ DEBUG = True
 # ALLOWED_HOSTSにlocalhostを設定
 ALLOWED_HOSTS = [
     'localhost',
+    '18.183.156.104', # パブリック IPv4 アドレスを追加
 ]
 
 
@@ -126,6 +127,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATIC_ROOT = '/usr/share/nginx/html/static/' # Nginxで静的ファイルを配信するために追加
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "staticfiles"),
